@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///C:/Users/ajris/personal_projects/crafthub_cancer-app.htm -->
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,shrink-to-fit=no"> <meta name="theme-color" content="#000000"> <link rel="shortcut icon" href="https://reactify.theironnetwork.org/horizontal/dashboard/favicon.ico"> <link href="crafthub_cancer-app_files/icon.css" rel="stylesheet"> <link rel="stylesheet" href="crafthub_cancer-app_files/material-design-iconic-font.css"> <link rel="stylesheet" href="crafthub_cancer-app_files/simple-line-icons.css"> <link rel="stylesheet" href="crafthub_cancer-app_files/leaflet.css"> <link rel="stylesheet" href="crafthub_cancer-app_files/jquery-jvectormap.css" type="text/css" media="screen"> <link href="crafthub_cancer-app_files/css.css" rel="stylesheet"> <title>Sass Dashboard</title> <link rel="shortcut icon" href="https://reactify.theironnetwork.org/favicon.ico"><link href="crafthub_cancer-app_files/main.css" rel="stylesheet"><style>.rct-tabs header {
+  z-index: 1;
+}</style><style data-jss="" data-meta="MuiTouchRipple">
+.MuiTouchRipple-root {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.MuiTouchRipple-ripple {
+  opacity: 0;
+  position: absolute;
+}
+.MuiTouchRipple-rippleVisible {
+  opacity: 0.3;
+  animation: MuiTouchRipple-keyframes-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+}
+.MuiTouchRipple-ripplePulsate {
+  animation-duration: 200ms;
+}
+.MuiTouchRipple-child {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.MuiTouchRipple-childLeaving {
+  opacity: 0;
+  animation: MuiTouchRipple-keyframes-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.MuiTouchRipple-childPulsate {
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: MuiTouchRipple-keyframes-pulsate 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite;
+}
+@-moz-keyframes MuiTouchRipple-keyframes-enter {
+  0% {
+    opacity: 0.1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+@-moz-keyframes MuiTouchRipple-keyframes-exit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes MuiTouchRipple-keyframes-pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style><style data-jss="" data-meta="MuiButtonBase">
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  -moz-user-select: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBase-root::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+</style><style data-jss="" data-meta="MuiButton">
+.MuiButton-root {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.MuiButton-root:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-root:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-root:hover.Mui-disabled {
+  background-color: transparent;
+}
+.MuiButton-label {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.MuiButton-text {
+  padding: 6px 8px;
+}
+.MuiButton-textPrimary {
+  color: #5D92F4;
+}
+.MuiButton-textPrimary:hover {
+  background-color: rgba(93, 146, 244, 0.08);
+}
+@media (hover: none) {
+  .MuiButton-textPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-textSecondary {
+  color: #FFB70F;
+}
+.MuiButton-textSecondary:hover {
+  background-color: rgba(255, 183, 15, 0.08);
+}
+@media (hover: none) {
+  .MuiButton-textSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  padding: 5px 15px;
+}
+.MuiButton-outlined.Mui-disabled {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+.MuiButton-outlinedPrimary {
+  color: #5D92F4;
+  border: 1px solid rgba(93, 146, 244, 0.5);
+}
+.MuiButton-outlinedPrimary:hover {
+  border: 1px solid #5D92F4;
+  background-color: rgba(93, 146, 244, 0.08);
+}
+@media (hover: none) {
+  .MuiButton-outlinedPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlinedSecondary {
+  color: #FFB70F;
+  border: 1px solid rgba(255, 183, 15, 0.5);
+}
+.MuiButton-outlinedSecondary:hover {
+  border: 1px solid #FFB70F;
+  background-color: rgba(255, 183, 15, 0.08);
+}
+.MuiButton-outlinedSecondary.Mui-disabled {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-outlinedSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-contained {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+  background-color: #e0e0e0;
+}
+.MuiButton-contained:hover {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+  background-color: #d5d5d5;
+}
+.MuiButton-contained.Mui-focusVisible {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiButton-contained:active {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiButton-contained.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+@media (hover: none) {
+  .MuiButton-contained:hover {
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+    background-color: #e0e0e0;
+  }
+}
+.MuiButton-contained:hover.Mui-disabled {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiButton-containedPrimary {
+  color: #fff;
+  background-color: #5D92F4;
+}
+.MuiButton-containedPrimary:hover {
+  background-color: rgb(65, 102, 170);
+}
+@media (hover: none) {
+  .MuiButton-containedPrimary:hover {
+    background-color: #5D92F4;
+  }
+}
+.MuiButton-containedSecondary {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FFB70F;
+}
+.MuiButton-containedSecondary:hover {
+  background-color: rgb(178, 128, 10);
+}
+@media (hover: none) {
+  .MuiButton-containedSecondary:hover {
+    background-color: #FFB70F;
+  }
+}
+.MuiButton-colorInherit {
+  color: inherit;
+  border-color: currentColor;
+}
+.MuiButton-textSizeSmall {
+  padding: 4px 5px;
+  font-size: 0.8125rem;
+}
+.MuiButton-textSizeLarge {
+  padding: 8px 11px;
+  font-size: 0.9375rem;
+}
+.MuiButton-outlinedSizeSmall {
+  padding: 3px 9px;
+  font-size: 0.8125rem;
+}
+.MuiButton-outlinedSizeLarge {
+  padding: 7px 21px;
+  font-size: 0.9375rem;
+}
+.MuiButton-containedSizeSmall {
+  padding: 4px 10px;
+  font-size: 0.8125rem;
+}
+.MuiButton-containedSizeLarge {
+  padding: 8px 22px;
+  font-size: 0.9375rem;
+}
+.MuiButton-fullWidth {
+  width: 100%;
+}
+.MuiButton-startIcon {
+  display: inherit;
+  margin-left: -4px;
+  margin-right: 8px;
+}
+.MuiButton-startIcon.MuiButton-iconSizeSmall {
+  margin-left: -2px;
+}
+.MuiButton-endIcon {
+  display: inherit;
+  margin-left: 8px;
+  margin-right: -4px;
+}
+.MuiButton-endIcon.MuiButton-iconSizeSmall {
+  margin-right: -2px;
+}
+.MuiButton-iconSizeSmall > *:first-child {
+  font-size: 18px;
+}
+.MuiButton-iconSizeMedium > *:first-child {
+  font-size: 20px;
+}
+.MuiButton-iconSizeLarge > *:first-child {
+  font-size: 22px;
+}
+</style><style data-jss="" data-meta="MuiIconButton">
+.MuiIconButton-root {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+.MuiIconButton-root:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiIconButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+@media (hover: none) {
+  .MuiIconButton-root:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-edgeStart {
+  margin-left: -12px;
+}
+.MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
+  margin-left: -3px;
+}
+.MuiIconButton-edgeEnd {
+  margin-right: -12px;
+}
+.MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
+  margin-right: -3px;
+}
+.MuiIconButton-colorInherit {
+  color: inherit;
+}
+.MuiIconButton-colorPrimary {
+  color: #5D92F4;
+}
+.MuiIconButton-colorPrimary:hover {
+  background-color: rgba(93, 146, 244, 0.08);
+}
+@media (hover: none) {
+  .MuiIconButton-colorPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-colorSecondary {
+  color: #FFB70F;
+}
+.MuiIconButton-colorSecondary:hover {
+  background-color: rgba(255, 183, 15, 0.08);
+}
+@media (hover: none) {
+  .MuiIconButton-colorSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-sizeSmall {
+  padding: 3px;
+  font-size: 1.125rem;
+}
+.MuiIconButton-label {
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+</style><style data-jss="" data-meta="MuiPaper">
+.MuiPaper-root {
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+}
+.MuiPaper-rounded {
+  border-radius: 4px;
+}
+.MuiPaper-elevation0 {
+  box-shadow: none;
+}
+.MuiPaper-elevation1 {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation2 {
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation3 {
+  box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation4 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation5 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation6 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation7 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation8 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation9 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation10 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation11 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation12 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation13 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation14 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation15 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation16 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation17 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation18 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation19 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation20 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation21 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation22 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation23 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation24 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+</style><style data-jss="" data-meta="MuiDrawer">
+.MuiDrawer-docked {
+  flex: 0 0 auto;
+}
+.MuiDrawer-paper {
+  top: 0;
+  flex: 1 0 auto;
+  height: 100%;
+  display: flex;
+  outline: 0;
+  z-index: 1200;
+  position: fixed;
+  overflow-y: auto;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+}
+.MuiDrawer-paperAnchorLeft {
+  left: 0;
+  right: auto;
+}
+.MuiDrawer-paperAnchorRight {
+  left: auto;
+  right: 0;
+}
+.MuiDrawer-paperAnchorTop {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  height: auto;
+  max-height: 100%;
+}
+.MuiDrawer-paperAnchorBottom {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  max-height: 100%;
+}
+.MuiDrawer-paperAnchorDockedLeft {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiDrawer-paperAnchorDockedTop {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiDrawer-paperAnchorDockedRight {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiDrawer-paperAnchorDockedBottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+</style><style data-jss="" data-meta="MuiAppBar">
+.MuiAppBar-root {
+  width: 100%;
+  display: flex;
+  z-index: 1100;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.MuiAppBar-positionFixed {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: fixed;
+}
+.MuiAppBar-positionAbsolute {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
+}
+.MuiAppBar-positionSticky {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: sticky;
+}
+.MuiAppBar-positionStatic {
+  position: static;
+  transform: translateZ(0);
+}
+.MuiAppBar-positionRelative {
+  position: relative;
+}
+.MuiAppBar-colorDefault {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f5f5f5;
+}
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #5D92F4;
+}
+.MuiAppBar-colorSecondary {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FFB70F;
+}
+</style><style data-jss="" data-meta="MuiToolbar">
+.MuiToolbar-root {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.MuiToolbar-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:600px) {
+  .MuiToolbar-gutters {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.MuiToolbar-regular {
+  min-height: 56px;
+}
+@media (min-width:0px) and (orientation: landscape) {
+  .MuiToolbar-regular {
+    min-height: 48px;
+  }
+}
+@media (min-width:600px) {
+  .MuiToolbar-regular {
+    min-height: 64px;
+  }
+}
+.MuiToolbar-dense {
+  min-height: 48px;
+}
+</style><style data-jss="" data-meta="MuiTooltip">
+.MuiTooltip-popper {
+  flip: false;
+  z-index: 1500;
+  pointer-events: none;
+}
+.MuiTooltip-popperInteractive {
+  pointer-events: auto;
+}
+.MuiTooltip-popperArrow[x-placement*="bottom"] .MuiTooltip-arrow {
+  top: 0;
+  left: 0;
+  width: 2em;
+  height: 1em;
+  margin-top: -0.95em;
+}
+.MuiTooltip-popperArrow[x-placement*="top"] .MuiTooltip-arrow {
+  left: 0;
+  width: 2em;
+  bottom: 0;
+  height: 1em;
+  margin-bottom: -0.95em;
+}
+.MuiTooltip-popperArrow[x-placement*="right"] .MuiTooltip-arrow {
+  left: 0;
+  width: 1em;
+  height: 2em;
+  margin-left: -0.95em;
+}
+.MuiTooltip-popperArrow[x-placement*="left"] .MuiTooltip-arrow {
+  right: 0;
+  width: 1em;
+  height: 2em;
+  margin-right: -0.95em;
+}
+.MuiTooltip-popperArrow[x-placement*="left"] .MuiTooltip-arrow::before {
+  border-color: transparent transparent transparent currentcolor;
+  border-width: 1em 0 1em 1em;
+}
+.MuiTooltip-popperArrow[x-placement*="right"] .MuiTooltip-arrow::before {
+  border-color: transparent currentcolor transparent transparent;
+  border-width: 1em 1em 1em 0;
+}
+.MuiTooltip-popperArrow[x-placement*="top"] .MuiTooltip-arrow::before {
+  border-color: currentcolor transparent transparent transparent;
+  border-width: 1em 1em 0 1em;
+}
+.MuiTooltip-popperArrow[x-placement*="bottom"] .MuiTooltip-arrow::before {
+  border-color: transparent transparent currentcolor transparent;
+  border-width: 0 1em 1em 1em;
+}
+.MuiTooltip-tooltip {
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.625rem;
+  max-width: 300px;
+  word-wrap: break-word;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 500;
+  line-height: 1.4em;
+  border-radius: 4px;
+  background-color: rgba(97, 97, 97, 0.9);
+}
+.MuiTooltip-tooltipArrow {
+  margin: 0;
+  position: relative;
+}
+.MuiTooltip-arrow {
+  color: rgba(97, 97, 97, 0.9);
+  position: absolute;
+  font-size: 6px;
+}
+.MuiTooltip-arrow::before {
+  width: 0;
+  height: 0;
+  margin: auto;
+  content: "";
+  display: block;
+  border-style: solid;
+}
+.MuiTooltip-touch {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.14286em;
+}
+.MuiTooltip-tooltipPlacementLeft {
+  margin: 0 24px ;
+  transform-origin: right center;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementLeft {
+    margin: 0 14px;
+  }
+}
+.MuiTooltip-tooltipPlacementRight {
+  margin: 0 24px;
+  transform-origin: left center;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementRight {
+    margin: 0 14px;
+  }
+}
+.MuiTooltip-tooltipPlacementTop {
+  margin: 24px 0;
+  transform-origin: center bottom;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementTop {
+    margin: 14px 0;
+  }
+}
+.MuiTooltip-tooltipPlacementBottom {
+  margin: 24px 0;
+  transform-origin: center top;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementBottom {
+    margin: 14px 0;
+  }
+}
+</style><style data-jss="" data-meta="MuiList">
+.MuiList-root {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+.MuiList-padding {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.MuiList-subheader {
+  padding-top: 0;
+}
+</style><style data-jss="" data-meta="MuiListItem">
+.MuiListItem-root {
+  width: 100%;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.MuiListItem-root.Mui-focusVisible {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+.MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+.MuiListItem-root.Mui-disabled {
+  opacity: 0.5;
+}
+.MuiListItem-container {
+  position: relative;
+}
+.MuiListItem-dense {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.MuiListItem-alignItemsFlexStart {
+  align-items: flex-start;
+}
+.MuiListItem-divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-clip: padding-box;
+}
+.MuiListItem-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.MuiListItem-button {
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiListItem-button:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+@media (hover: none) {
+  .MuiListItem-button:hover {
+    background-color: transparent;
+  }
+}
+.MuiListItem-secondaryAction {
+  padding-right: 48px;
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.MuiTypography-root {
+  margin: 0;
+}
+.MuiTypography-body2 {
+  font-size: 0.875rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+}
+.MuiTypography-body1 {
+  font-size: 1rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.MuiTypography-caption {
+  font-size: 0.75rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1.66;
+}
+.MuiTypography-button {
+  font-size: 0.875rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+}
+.MuiTypography-h1 {
+  font-size: 6rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 300;
+  line-height: 1;
+}
+.MuiTypography-h2 {
+  font-size: 21px;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+.MuiTypography-h3 {
+  font-size: 3rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1.04;
+}
+.MuiTypography-h4 {
+  font-size: 2.125rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1.17;
+}
+.MuiTypography-h5 {
+  font-size: 1.5rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+}
+.MuiTypography-h6 {
+  font-size: 1.25rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.MuiTypography-subtitle1 {
+  font-size: 1rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+.MuiTypography-subtitle2 {
+  font-size: 0.875rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 500;
+  line-height: 1.57;
+}
+.MuiTypography-overline {
+  font-size: 0.75rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 2.66;
+  text-transform: uppercase;
+}
+.MuiTypography-srOnly {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+.MuiTypography-alignLeft {
+  text-align: left;
+}
+.MuiTypography-alignCenter {
+  text-align: center;
+}
+.MuiTypography-alignRight {
+  text-align: right;
+}
+.MuiTypography-alignJustify {
+  text-align: justify;
+}
+.MuiTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MuiTypography-gutterBottom {
+  margin-bottom: 0.35em;
+}
+.MuiTypography-paragraph {
+  margin-bottom: 16px;
+}
+.MuiTypography-colorInherit {
+  color: inherit;
+}
+.MuiTypography-colorPrimary {
+  color: #5D92F4;
+}
+.MuiTypography-colorSecondary {
+  color: #FFB70F;
+}
+.MuiTypography-colorTextPrimary {
+  color: rgba(0, 0, 0, 0.87);
+}
+.MuiTypography-colorTextSecondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiTypography-colorError {
+  color: #f44336;
+}
+.MuiTypography-displayInline {
+  display: inline;
+}
+.MuiTypography-displayBlock {
+  display: block;
+}
+</style><style data-jss="" data-meta="MuiAvatar">
+.MuiAvatar-root {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.25rem;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  line-height: 1;
+  border-radius: 50%;
+  justify-content: center;
+  -moz-user-select: none;
+}
+.MuiAvatar-colorDefault {
+  color: #fafafa;
+  background-color: #bdbdbd;
+}
+.MuiAvatar-rounded {
+  border-radius: 4px;
+}
+.MuiAvatar-square {
+  border-radius: 0;
+}
+.MuiAvatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+</style><style data-jss="" data-meta="MuiChip">
+.MuiChip-root {
+  color: rgba(0, 0, 0, 0.87);
+  border: none;
+  cursor: default;
+  height: 32px;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  box-sizing: border-box;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  align-items: center;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  white-space: nowrap;
+  border-radius: 16px;
+  vertical-align: middle;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #e0e0e0;
+}
+.MuiChip-root.Mui-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.MuiChip-root .MuiChip-avatar {
+  color: #616161;
+  width: 24px;
+  height: 24px;
+  font-size: 0.75rem;
+  margin-left: 5px;
+  margin-right: -6px;
+}
+.MuiChip-root .MuiChip-avatarColorPrimary {
+  color: #fff;
+  background-color: rgb(65, 102, 170);
+}
+.MuiChip-root .MuiChip-avatarColorSecondary {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgb(178, 128, 10);
+}
+.MuiChip-root .MuiChip-avatarSmall {
+  width: 18px;
+  height: 18px;
+  font-size: 0.625rem;
+  margin-left: 4px;
+  margin-right: -4px;
+}
+.MuiChip-sizeSmall {
+  height: 24px;
+}
+.MuiChip-colorPrimary {
+  color: #fff;
+  background-color: #5D92F4;
+}
+.MuiChip-colorSecondary {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FFB70F;
+}
+.MuiChip-clickable {
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiChip-clickable:hover, .MuiChip-clickable:focus {
+  background-color: rgb(206, 206, 206);
+}
+.MuiChip-clickable:active {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+.MuiChip-clickableColorPrimary:hover, .MuiChip-clickableColorPrimary:focus {
+  background-color: rgb(105, 154, 244);
+}
+.MuiChip-clickableColorSecondary:hover, .MuiChip-clickableColorSecondary:focus {
+  background-color: rgb(234, 168, 13);
+}
+.MuiChip-deletable:focus {
+  background-color: rgb(206, 206, 206);
+}
+.MuiChip-deletableColorPrimary:focus {
+  background-color: rgb(125, 167, 246);
+}
+.MuiChip-deletableColorSecondary:focus {
+  background-color: rgb(204, 146, 12);
+}
+.MuiChip-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  background-color: transparent;
+}
+.MuiChip-clickable.MuiChip-outlined:hover, .MuiChip-clickable.MuiChip-outlined:focus, .MuiChip-deletable.MuiChip-outlined:focus {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiChip-outlined .MuiChip-avatar {
+  margin-left: 4px;
+}
+.MuiChip-outlined .MuiChip-avatarSmall {
+  margin-left: 2px;
+}
+.MuiChip-outlined .MuiChip-icon {
+  margin-left: 4px;
+}
+.MuiChip-outlined .MuiChip-iconSmall {
+  margin-left: 2px;
+}
+.MuiChip-outlined .MuiChip-deleteIcon {
+  margin-right: 5px;
+}
+.MuiChip-outlined .MuiChip-deleteIconSmall {
+  margin-right: 3px;
+}
+.MuiChip-outlinedPrimary {
+  color: #5D92F4;
+  border: 1px solid #5D92F4;
+}
+.MuiChip-clickable.MuiChip-outlinedPrimary:hover, .MuiChip-clickable.MuiChip-outlinedPrimary:focus, .MuiChip-deletable.MuiChip-outlinedPrimary:focus {
+  background-color: rgba(93, 146, 244, 0.08);
+}
+.MuiChip-outlinedSecondary {
+  color: #FFB70F;
+  border: 1px solid #FFB70F;
+}
+.MuiChip-clickable.MuiChip-outlinedSecondary:hover, .MuiChip-clickable.MuiChip-outlinedSecondary:focus, .MuiChip-deletable.MuiChip-outlinedSecondary:focus {
+  background-color: rgba(255, 183, 15, 0.08);
+}
+.MuiChip-icon {
+  color: #616161;
+  margin-left: 5px;
+  margin-right: -6px;
+}
+.MuiChip-iconSmall {
+  width: 18px;
+  height: 18px;
+  margin-left: 4px;
+  margin-right: -4px;
+}
+.MuiChip-iconColorPrimary {
+  color: inherit;
+}
+.MuiChip-iconColorSecondary {
+  color: inherit;
+}
+.MuiChip-label {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.MuiChip-labelSmall {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.MuiChip-deleteIcon {
+  color: rgba(0, 0, 0, 0.26);
+  width: 22px;
+  cursor: pointer;
+  height: 22px;
+  margin: 0 5px 0 -6px;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiChip-deleteIcon:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+.MuiChip-deleteIconSmall {
+  width: 16px;
+  height: 16px;
+  margin-left: -4px;
+  margin-right: 4px;
+}
+.MuiChip-deleteIconColorPrimary {
+  color: rgba(255, 255, 255, 0.7);
+}
+.MuiChip-deleteIconColorPrimary:hover, .MuiChip-deleteIconColorPrimary:active {
+  color: #fff;
+}
+.MuiChip-deleteIconColorSecondary {
+  color: rgba(0, 0, 0, 0.7);
+}
+.MuiChip-deleteIconColorSecondary:hover, .MuiChip-deleteIconColorSecondary:active {
+  color: rgba(0, 0, 0, 0.87);
+}
+.MuiChip-deleteIconOutlinedColorPrimary {
+  color: rgba(93, 146, 244, 0.7);
+}
+.MuiChip-deleteIconOutlinedColorPrimary:hover, .MuiChip-deleteIconOutlinedColorPrimary:active {
+  color: #5D92F4;
+}
+.MuiChip-deleteIconOutlinedColorSecondary {
+  color: rgba(255, 183, 15, 0.7);
+}
+.MuiChip-deleteIconOutlinedColorSecondary:hover, .MuiChip-deleteIconOutlinedColorSecondary:active {
+  color: #FFB70F;
+}
+</style><style data-jss="" data-meta="MuiFormControlLabel">
+.MuiFormControlLabel-root {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-left: -11px;
+  margin-right: 16px;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiFormControlLabel-root.Mui-disabled {
+  cursor: default;
+}
+.MuiFormControlLabel-labelPlacementStart {
+  margin-left: 16px;
+  margin-right: -11px;
+  flex-direction: row-reverse;
+}
+.MuiFormControlLabel-labelPlacementTop {
+  margin-left: 16px;
+  flex-direction: column-reverse;
+}
+.MuiFormControlLabel-labelPlacementBottom {
+  margin-left: 16px;
+  flex-direction: column;
+}
+.MuiFormControlLabel-label.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+</style><style data-jss="" data-meta="PrivateSwitchBase">
+.jss164 {
+  padding: 9px;
+}
+.jss167 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: inherit;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  z-index: 1;
+  position: absolute;
+}
+</style><style data-jss="" data-meta="MuiSwitch">
+.MuiSwitch-root {
+  width: 58px;
+  height: 38px;
+  display: inline-flex;
+  padding: 12px;
+  z-index: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.MuiSwitch-edgeStart {
+  margin-left: -8px;
+}
+.MuiSwitch-edgeEnd {
+  margin-right: -8px;
+}
+.MuiSwitch-switchBase {
+  top: 0;
+  left: 0;
+  color: #fafafa;
+  z-index: 1;
+  position: absolute;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiSwitch-switchBase.Mui-checked {
+  transform: translateX(20px);
+}
+.MuiSwitch-switchBase.Mui-disabled {
+  color: #bdbdbd;
+}
+.MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  opacity: 0.5;
+}
+.MuiSwitch-switchBase.Mui-disabled + .MuiSwitch-track {
+  opacity: 0.12;
+}
+.MuiSwitch-colorPrimary.Mui-checked {
+  color: #5D92F4;
+}
+.MuiSwitch-colorPrimary.Mui-disabled {
+  color: #bdbdbd;
+}
+.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track {
+  background-color: #5D92F4;
+}
+.MuiSwitch-colorPrimary.Mui-disabled + .MuiSwitch-track {
+  background-color: #000;
+}
+.MuiSwitch-colorPrimary.Mui-checked:hover {
+  background-color: rgba(93, 146, 244, 0.08);
+}
+@media (hover: none) {
+  .MuiSwitch-colorPrimary.Mui-checked:hover {
+    background-color: transparent;
+  }
+}
+.MuiSwitch-colorSecondary.Mui-checked {
+  color: #FFB70F;
+}
+.MuiSwitch-colorSecondary.Mui-disabled {
+  color: #bdbdbd;
+}
+.MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+  background-color: #FFB70F;
+}
+.MuiSwitch-colorSecondary.Mui-disabled + .MuiSwitch-track {
+  background-color: #000;
+}
+.MuiSwitch-colorSecondary.Mui-checked:hover {
+  background-color: rgba(255, 183, 15, 0.08);
+}
+@media (hover: none) {
+  .MuiSwitch-colorSecondary.Mui-checked:hover {
+    background-color: transparent;
+  }
+}
+.MuiSwitch-sizeSmall {
+  width: 40px;
+  height: 24px;
+  padding: 7px;
+}
+.MuiSwitch-sizeSmall .MuiSwitch-thumb {
+  width: 16px;
+  height: 16px;
+}
+.MuiSwitch-sizeSmall .MuiSwitch-switchBase {
+  padding: 4px;
+}
+.MuiSwitch-sizeSmall .MuiSwitch-switchBase.Mui-checked {
+  transform: translateX(16px);
+}
+.MuiSwitch-input {
+  left: -100%;
+  width: 300%;
+}
+.MuiSwitch-thumb {
+  width: 20px;
+  height: 20px;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.MuiSwitch-track {
+  width: 100%;
+  height: 100%;
+  opacity: 0.38;
+  z-index: -1;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 7px;
+  background-color: #000;
+}
+</style><style data-jss="" data-meta="MuiInputBase">
+.MuiInputBase-root {
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  display: inline-flex;
+  position: relative;
+  font-size: 1rem;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  line-height: 1.1875em;
+}
+.MuiInputBase-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+}
+.MuiInputBase-multiline {
+  padding: 6px 0 7px;
+}
+.MuiInputBase-multiline.MuiInputBase-marginDense {
+  padding-top: 3px;
+}
+.MuiInputBase-fullWidth {
+  width: 100%;
+}
+.MuiInputBase-input {
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  border: 0;
+  height: 1.1875em;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: none;
+  box-sizing: content-box;
+  animation-name: MuiInputBase-keyframes-auto-fill-cancel;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiInputBase-input::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input:focus {
+  outline: 0;
+}
+.MuiInputBase-input:invalid {
+  box-shadow: none;
+}
+.MuiInputBase-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.MuiInputBase-input.Mui-disabled {
+  opacity: 1;
+}
+.MuiInputBase-input:-webkit-autofill {
+  animation-name: MuiInputBase-keyframes-auto-fill;
+  animation-duration: 5000s;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-moz-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-webkit-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-moz-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus:-ms-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-ms-input-placeholder {
+  opacity: 0.42;
+}
+@-moz-keyframes MuiInputBase-keyframes-auto-fill {}
+@-moz-keyframes MuiInputBase-keyframes-auto-fill-cancel {}
+.MuiInputBase-inputMarginDense {
+  padding-top: 3px;
+}
+.MuiInputBase-inputMultiline {
+  height: auto;
+  resize: none;
+  padding: 0;
+}
+.MuiInputBase-inputTypeSearch {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+</style><style data-jss="" data-meta="MuiInput">
+.MuiInput-root {
+  position: relative;
+}
+label + .MuiInput-formControl {
+  margin-top: 16px;
+}
+.MuiInput-colorSecondary.MuiInput-underline:after {
+  border-bottom-color: #FFB70F;
+}
+.MuiInput-underline:after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  border-bottom: 2px solid #5D92F4;
+  pointer-events: none;
+}
+.MuiInput-underline.Mui-focused:after {
+  transform: scaleX(1);
+}
+.MuiInput-underline.Mui-error:after {
+  transform: scaleX(1);
+  border-bottom-color: #f44336;
+}
+.MuiInput-underline:before {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "\00a0";
+  position: absolute;
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  pointer-events: none;
+}
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.87);
+}
+.MuiInput-underline.Mui-disabled:before {
+  border-bottom-style: dotted;
+}
+@media (hover: none) {
+  .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  }
+}
+</style><style data-jss="" data-meta="MuiFormLabel">
+.MuiFormLabel-root {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+  font-size: 1rem;
+  font-family: Roboto,Helvetica,Arial,Heebo,sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+.MuiFormLabel-root.Mui-focused {
+  color: #5D92F4;
+}
+.MuiFormLabel-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+.MuiFormLabel-root.Mui-error {
+  color: #f44336;
+}
+.MuiFormLabel-colorSecondary.Mui-focused {
+  color: #FFB70F;
+}
+.MuiFormLabel-asterisk.Mui-error {
+  color: #f44336;
+}
+</style><style data-jss="" data-meta="MuiInputLabel">
+.MuiInputLabel-root {
+  display: block;
+  transform-origin: top left;
+}
+.MuiInputLabel-formControl {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(0, 24px) scale(1);
+}
+.MuiInputLabel-marginDense {
+  transform: translate(0, 21px) scale(1);
+}
+.MuiInputLabel-shrink {
+  transform: translate(0, 1.5px) scale(0.75);
+  transform-origin: top left;
+}
+.MuiInputLabel-animated {
+  transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+.MuiInputLabel-filled {
+  z-index: 1;
+  transform: translate(12px, 20px) scale(1);
+  pointer-events: none;
+}
+.MuiInputLabel-filled.MuiInputLabel-marginDense {
+  transform: translate(12px, 17px) scale(1);
+}
+.MuiInputLabel-filled.MuiInputLabel-shrink {
+  transform: translate(12px, 10px) scale(0.75);
+}
+.MuiInputLabel-filled.MuiInputLabel-shrink.MuiInputLabel-marginDense {
+  transform: translate(12px, 7px) scale(0.75);
+}
+.MuiInputLabel-outlined {
+  z-index: 1;
+  transform: translate(14px, 20px) scale(1);
+  pointer-events: none;
+}
+.MuiInputLabel-outlined.MuiInputLabel-marginDense {
+  transform: translate(14px, 12px) scale(1);
+}
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  transform: translate(14px, -6px) scale(0.75);
+}
+</style><style data-jss="" data-meta="MuiFormControl">
+.MuiFormControl-root {
+  border: 0;
+  margin: 0;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  flex-direction: column;
+  vertical-align: top;
+}
+.MuiFormControl-marginNormal {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.MuiFormControl-marginDense {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+.MuiFormControl-fullWidth {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiTextField">
+
+</style><script charset="utf-8" src="crafthub_cancer-app_files/152.txt"></script><style type="text/css">/* Chart.js */
+/*
+ * DOM element rendering detection
+ * https://davidwalsh.name/detect-node-insertion
+ */
+@keyframes chartjs-render-animation {
+  from { opacity: 0.99; }
+  to { opacity: 1; }
+}
+
+.chartjs-render-monitor {
+  animation: chartjs-render-animation 0.001s;
+}
+
+/*
+ * DOM element resizing detection
+ * https://github.com/marcj/css-element-queries
+ */
+.chartjs-size-monitor,
+.chartjs-size-monitor-expand,
+.chartjs-size-monitor-shrink {
+  position: absolute;
+  direction: ltr;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+  z-index: -1;
+}
+
+.chartjs-size-monitor-expand > div {
+  position: absolute;
+  width: 1000000px;
+  height: 1000000px;
+  left: 0;
+  top: 0;
+}
+
+.chartjs-size-monitor-shrink > div {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: 0;
+  top: 0;
+}
+</style><script charset="utf-8" src="crafthub_cancer-app_files/128.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/134.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/132.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/133.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/131.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/3.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/8.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/11.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/119.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/194.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/120.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/4.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/176.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/187.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/197.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/140.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/0.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/1.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/2.txt"></script><script charset="utf-8" src="crafthub_cancer-app_files/80.txt"></script><meta name="description" content="Reactify Sass Dashboard" data-react-helmet="true"></head> <body cz-shortcut-listen="true" class=""> <noscript> You need to enable JavaScript to run this app. </noscript> <div id="root"><div class="notification-container notification-container-empty"><span></span></div><div class="app-horizontal collapsed-sidebar" style="height: 100%;"><div class="app-container" style="height: 100%;"><div class="rct-page-wrapper" style="height: 100%;"><div class="rct-app-content"><div class="app-header"><header class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic rct-header MuiAppBar-colorPrimary"><div class="MuiToolbar-root MuiToolbar-regular d-flex justify-content-between w-100 pl-0 MuiToolbar-gutters"><div class="d-inline-flex align-items-center"><div class="site-logo"><a class="logo-mini" href="https://reactify.theironnetwork.org/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBRkFDMUQxMDM3RjYxMUU4QjY3MUE1NjM5RTcyQUE4NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBRkFDMUQxMTM3RjYxMUU4QjY3MUE1NjM5RTcyQUE4NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkFGQUMxRDBFMzdGNjExRThCNjcxQTU2MzlFNzJBQTg2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkFGQUMxRDBGMzdGNjExRThCNjcxQTU2MzlFNzJBQTg2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+qIhyAAAAAxZJREFUeNrEWD1oVEEQfu+QNEFeYV6RgxCReOChpAhcI2hxwbNIYWEjKVJqYZrAgY2muCaV6OMgZQSxDARRkWgndmehjXAWRzh4QtSTEEOMnJ7fyuw5LO9n1vcOBz72bndn3uzs7Mzsuo4lDQaDWTRXgDmgSDgBHAB7wHvgDfASeOW67i8nT4ICHtAAOgM7ConPl3zHTVFiDM1N4BbABX4AtoEdIAQ+A8eBCeAscAE4x+Z/Ay7DSq//1RqTQIutcp9WWRbyV4B14lO0pBYHrJHFQvo9JhEUkpA+EEhNHSFrnPzMoY+btJamyCFN7AHVHH0vjPKruMlTjKENzOR8EGTK0H62mEVyVcRqm9C5wnykmiL0PCm+q35bKJPuwBRHdkmZIEVgjRTWdMP4WDWr+Rrs+Popx71nmLnExjeob1343QXgCFjmnTqyNoRKD5iT+8AppsifRQmV0a7RGeYaJqScwixNB8+EypQZz6zqWNWrFDAfChTp6yAnVKhNfKsFyr6Kngt4JeZ/iBz01sJlt6mdK1AJoKgrYLwX0fcT+Ei/vwN3LM/PDrXFY0yZUMA4T+0D4Ctl66fAC+q/D6t0IzL/mQRr6e8WHTpaimope7tE8zaN/k0WtT1jrAA8js0/f+OWoiOeLxYFjtbmcYjihKZ6BI8+HBsJcheHOYrlo7ogQHlGtNVHXUXv8Yj5fRpLCqR1ktEqsD2bTiwJXfcJsMe6lCVPasfG2AHfUjRb9Pcaxj4liJ4e+o5NnDFW9I5tkU99PovEyhev2sQZqwjMbwhGoAvIUXWJqYLjgnUEtslNMY5rUldaVrBc17HO2mz+xZg0EJiOnCDDZ5ZsxNUzTaGwu6xIeqRqZ0ufC9hJ9MzBZbbCmjNCUgUYK9BWJDVwaUSKzLACrRV7b6JKjt8OSiNQpM2uvpOSCxy/N9Vy3JoeO/oVKaN5o2xmuFH65Kx9ZpGKrZCsd+0yzd9nMpS8qSyvENeB24JXiAmqjVSuuQScZvNVblKXtSby1I//9T7TIT4v8/uM5cvVF7JSSC9XW5a1sPNbgAEAAEDPGxuB70YAAAAASUVORK5CYII=" class="mr-15" alt="site logo" width="35" height="35"></a><a class="logo-normal" href="https://reactify.theironnetwork.org/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAARCAYAAACGjBGPAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDMEE2OUQyMjM3RjYxMUU4OTM2MEZCOEZBNDQ3Nzg5MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDMEE2OUQyMzM3RjYxMUU4OTM2MEZCOEZBNDQ3Nzg5MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkMwQTY5RDIwMzdGNjExRTg5MzYwRkI4RkE0NDc3ODkwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkMwQTY5RDIxMzdGNjExRTg5MzYwRkI4RkE0NDc3ODkwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+yJADkAAAA4JJREFUeNrklk1IVFEUx5+TDJWEBAm5mM1QGyGkJAuGamEgiBWF9KELKyjcFCQY4aagglm5GKWBFmmURKSLJJSiFKMPCCuMKJBSasJgBMMmtWRg+h/6Xzld3psZNWLACz/ue+ee++59556P66RSqXJQYVEC/E6ONO7nlIs8ABpBqSUvBj1gMvWnNWW7UDLl3uRDzTlijIvcU7Elb6C8xZJ3Uy4GiYBQNuvkgxXgJWilzAdk0QPgMj6UyMvLa3Vysz3mvu9a8h1gAPveu1CrS+t2kReAMfDGY14RKMzwbR9d2Z/FPjz1vDwjg7e3L8YFXY3BMXGzpCWTnDKiwkmed1k6fhAWr6JOkq5b5KIXUXq/uGaQ4yEwq0I5SZ1+lUtkvJrvYxzXukIlvzskB+Tyn50yNz+NkeSUNoGvSlaO7j6IgQsUHwWPMFYGtxymLAzOiKuCh2A72AdWgSq1jJxeLeijbgk4DJ4wKX4GHWArKAM3wE/wjvPXgpXAGFl014MGMCr7ovwj6AVRrn9P/ZMY/hC4YjzjmaokYsV6sT7HzquJIovp8JBnMC6WV7JmurZPycLa1eVn+d5uHUKNXQHSJNAQ5ccyhQnDftJ4lZJHqB90Ut5NFFrMD9GlxSWjzBcacbPxNLmgWjbH71ZQ3sj3Upc5ciiBf2kM60BK1UEm5tMEB4foDfVqk70utTtTK1DJtYVeZLdK6rTpOYssrQs1RkCPifdxfsiUVmmfEO/X1SSJz1pJjJAPUjzDfkDHnGoz0J3mz0msbmScngOvwTZwTen/YL8aTP+POoz9yeHclrzEO9RpuVZA/tSzmkj8MCSGLPmYRxn2qXAyMV9j6UQtz6jje51LbPdoueQt6gaW4hmmCKho+Gt9n4cFR5l5y6zN3pTLmIST+riU1S/gDkVr2K9ThpLsfsJa5gH4JpVHSqQJL3S3wB4wpXQ/sD/OEPQvwTteoHvO6qT3nfbSVcjsGzOLM4n2q+t6nM8Jll2TL0yuiNPDTMWa9wzlRbNK17Q2l/uIvtskFusZ1jW+yb6OnwXvXSw4BeX9eNzN+8EcZHOQybt4xk6qSs3vwNgE501AZwvjUU48DrrACDgJXqk1uqAr84+AIO8vfSpPGT1ZdzMeD1LvO4fegktg0Nq+/NNwGgepYs666iznBqNuoOdEnOXeWNKT5sq/3I0ht+VOt7HfAgwAsFz98c/ruy8AAAAASUVORK5CYII=" class="img-fluid" alt="site-logo" width="67" height="17"></a></div><ul class="list-inline mb-0 navbar-left"><li class="list-inline-item"><a class="MuiButtonBase-root MuiIconButton-root humburger p-0 MuiIconButton-colorInherit" tabindex="0" role="button" aria-disabled="false" aria-label="Menu" title="Sidebar Toggle" href="https://reactify.theironnetwork.org/"><span class="MuiIconButton-label"><i class="ti-layout-sidebar-left"></i></span><span class="MuiTouchRipple-root"></span></a></li><li class="list-inline-item search-icon d-inline-block"><div class="search-wrapper"><input placeholder="Search.." type="search" class="search-input-lg form-control"></div><button class="MuiButtonBase-root MuiIconButton-root search-icon-btn" tabindex="0" type="button" mini="true"><span class="MuiIconButton-label"><i class="zmdi zmdi-search"></i></span><span class="MuiTouchRipple-root"></span></button><div class="search-form-wrap"><button class="MuiButtonBase-root MuiIconButton-root close-btn text-white" tabindex="0" type="button"><span class="MuiIconButton-label"><i class="zmdi zmdi-close-circle-o font-2x"></i></span><span class="MuiTouchRipple-root"></span></button><div class="d-flex justify-content-center align-items-center h-100 w-100"><form class=""><div class="form-group"><input placeholder="What Are You Looking For" name="search" id="search-form" type="text" class="search-input rounded-0 form-control"><button class="MuiButtonBase-root MuiIconButton-root search-btn text-white" tabindex="0" type="button"><span class="MuiIconButton-label"><i class="zmdi zmdi-search"></i></span><span class="MuiTouchRipple-root"></span></button></div></form></div></div></li></ul></div></div><div class="dashboard-overlay p-4 d-none"><div class="overlay-head d-flex justify-content-between mb-40"><div class="dash-user-info"><h2 class="fw-bold mb-0"><span>Summary</span></h2></div><button type="button" class="closed rct-link-btn"><i class="ti-close"></i></button></div><div class="dashboard-overlay-content mb-30"><div class="row row-eq-height"><div class="col-sm-6 col-md-4"><div class=""><div class="rct-block "><div class="rct-block-title "><h4><span>Orders</span> </h4></div><div class="collapse show" aria-expanded="true"><div class="rct-full-block"><div class="d-flex justify-content-between p-20"><div class="counter-report"><h2 class="title mb-0"><span>25875</span></h2><span class="text-muted">Total Orders</span></div><span class="align-self-center d-flex arrow-icon"><i class="ti-arrow-up"></i></span></div><div class="mb-10"><canvas style="display: block; height: 176px; width: 481px;" class="chartjs-render-monitor" width="601" height="220"></canvas></div><div class="d-flex justify-content-between p-20"><div class="totle-status"><h2><span>720</span></h2><span>Today</span></div><div class="totle-status"><h2><span>1500</span></h2><span>This Week</span></div><div class="totle-status"><h2><span>2522</span></h2><span>This Month</span></div></div></div></div></div></div></div><div class="col-sm-6 col-md-4"><div class=""><div class="rct-block "><div class="rct-block-title "><h4><span>Users</span> </h4></div><div class="collapse show" aria-expanded="true"><div class="rct-full-block"><div class="d-flex justify-content-between p-20"><div class="counter-report"><h2 class="title mb-0"><span>35875</span></h2><span class="text-muted">Total Visitor</span></div><span class="align-self-center d-flex arrow-icon"><i class="ti-arrow-up"></i></span></div><div class="mb-10"><canvas style="display: block; height: 176px; width: 481px;" class="chartjs-render-monitor" width="601" height="220"></canvas></div><div class="d-flex justify-content-between p-20"><div class="totle-status"><h2><span>720</span></h2><span>Today</span></div><div class="totle-status"><h2><span>1500</span></h2><span>This Week</span></div><div class="totle-status"><h2><span>2522</span></h2><span>This Month</span></div></div></div></div></div></div></div><div class="col-sm-12 col-md-4"><div><div class="rct-block overflow-hidden"><div class="rct-block-title "><h4><span>Ratings</span></h4></div><div class="rct-full-block "><div class="p-20 d-flex justify-content-between"><span class="fs-14">Average Ratings</span><div style="display: inline-block; position: relative;" class="dv-star-rating"><input style="display: none; position: absolute; margin-left: -9999px;" class="dv-star-rating-input" type="radio" name="rate2" id="rate2_5" value="5"><label style="float: right; cursor: pointer; color: rgb(70, 77, 105);" class="dv-star-rating-star dv-star-rating-empty-star" for="rate2_5"><i class="fa-star-half-o fa font-lg mr-5"></i></label><input style="display: none; position: absolute; margin-left: -9999px;" class="dv-star-rating-input" type="radio" name="rate2" id="rate2_4" value="4"><label style="float: right; cursor: pointer; color: rgb(255, 183, 15);" class="dv-star-rating-star dv-star-rating-full-star" for="rate2_4"><i class="fa-star-o fa font-lg mr-5"></i></label><input style="display: none; position: absolute; margin-left: -9999px;" class="dv-star-rating-input" type="radio" name="rate2" id="rate2_3" value="3"><label style="float: right; cursor: pointer; color: rgb(255, 183, 15);" class="dv-star-rating-star dv-star-rating-full-star" for="rate2_3"><i class="fa-star-o fa font-lg mr-5"></i></label><input style="display: none; position: absolute; margin-left: -9999px;" class="dv-star-rating-input" type="radio" name="rate2" id="rate2_2" value="2"><label style="float: right; cursor: pointer; color: rgb(255, 183, 15);" class="dv-star-rating-star dv-star-rating-full-star" for="rate2_2"><i class="fa-star-o fa font-lg mr-5"></i></label><input style="display: none; position: absolute; margin-left: -9999px;" class="dv-star-rating-input" type="radio" name="rate2" id="rate2_1" value="1"><label style="float: right; cursor: pointer; color: rgb(255, 183, 15);" class="dv-star-rating-star dv-star-rating-full-star" for="rate2_1"><i class="fa-star-o fa font-lg mr-5"></i></label></div><span class="fs-14">4.89 out of 122 Ratings</span></div><h2 class="report-title">Rating Count</h2><div class="table-responsive"><table class="table table-borderless table-middle mb-0"><tbody><tr><td>5 Star</td><td class="w-50"><div class="progress"><div class="progress-bar bg-yellow" style="width: 85%;" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div></td><td>7.14%</td></tr><tr><td>4 Star</td><td class="w-50"><div class="progress"><div class="progress-bar bg-yellow" style="width: 55%;" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div></div></td><td>6.14%</td></tr><tr><td>3 Star</td><td class="w-50"><div class="progress"><div class="progress-bar bg-yellow" style="width: 75%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div></td><td>3.14%</td></tr><tr><td>2 Star</td><td class="w-50"><div class="progress"><div class="progress-bar bg-yellow" style="width: 65%;" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div></div></td><td>2%</td></tr><tr><td>1 Star</td><td class="w-50"><div class="progress"><div class="progress-bar bg-yellow" style="width: 25%;" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td><td>1%</td></tr></tbody></table></div></div><div class="rct-block-footer "><a class="MuiButtonBase-root MuiButton-root MuiButton-contained bg-primary MuiButton-containedPrimary" tabindex="0" role="button" aria-disabled="false" href="https://reactify.theironnetwork.org/app/pages/report"><span class="MuiButton-label">View All</span><span class="MuiTouchRipple-root"></span></a></div></div></div></div></div></div></div></header></div><div class="rct-page" style="height: 100%;"><div class="rct-scroll" style="position: relative; overflow: hidden; width: 100%; height: calc(-50px + 100vh);"><div style="position: absolute; inset: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;padding-bottom: 0px !important;"><div class="rct-page-content" style="width: calc(100% - 1.25rem);"><div class="dashboard-wrapper"><div class="saas-dashboard"><div class="page-title d-flex justify-content-between align-items-center"><div class="page-title-wrap"><h2 class="" style="width: 120px;"><span>Dashboard</span></h2></div><nav class="mb-0 tour-step-7" aria-label="breadcrumb"><ol class="breadcrumb"><a class="breadcrumb-item" href="https://reactify.theironnetwork.org/"><span style="text-transform: none;">QT Scanner</span></a><a class="breadcrumb-item" href="https://reactify.theironnetwork.org/horizontal/dashboard"><span style="text-transform: none;">Dashboard</span></a></ol></nav></div><div class="col-sm-6 col-md-4 col-lg-4 w-xs-half-block"><div class="rct-block overflow-hidden"><div class="collapse show" aria-expanded="true"><div class="rct-full-block"><div class="user-profile-widget"><div class="bg-primary py-70"></div><div class="p-20"><div class="d-flex user-avatar"><div class="MuiAvatar-root MuiAvatar-circle size-100 rounded-circle mr-15"><img alt="user 2" src="data:image/jpeg;base64,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" class="MuiAvatar-img"></div><div class="user-info text-white pt-20"><h4 class="mb-0">Filan Fisteku</h4><span>Your Skin Profile</span></div></div><ul class="list-unstyled my-25"><li class="border-bottom py-10 d-flex align-items-center"><i class="zmdi zmdi-plus-circle mr-10 fs-14"></i><a href="mail-to:phoebe@gmail.com" class="fs-14 text-dark">Add Profile Information</a></li><li class="border-bottom py-10 fs-14 d-flex align-items-center"><i class="zmdi zmdi-account-box mr-10 fs-14"></i>Contact Doctor</li><li class="border-bottom py-10 fs-14 d-flex align-items-center"><i class="zmdi zmdi-upload mr-10 fs-14"></i>Upload Image</li><li class="border-bottom py-10 fs-14 d-flex align-items-center"><i class="zmdi zmdi-collection-image mr-10 fs-14"></i>Image History</li></ul></div></div></div></div></div></div><div class="row"><div class="col-sm-12 col-md-12 col-lg-6 d-xxs-full"><div class="rct-block overflow-hidden"><div class="rct-block-title "><h4><span>Image Updates</span> <span class="p-1 ml-10 badge badge-success"><span>Monthly</span></span></h4><div class="contextual-link"><a href="file:///C:/Users/ajris/personal_projects/crafthub_cancer-app.htm#"><i class="ti-minus"></i></a><a href="file:///C:/Users/ajris/personal_projects/crafthub_cancer-app.htm#"><i class="ti-reload"></i></a><a href="file:///C:/Users/ajris/personal_projects/crafthub_cancer-app.htm#"><i class="ti-close"></i></a></div></div><div class="collapse show" aria-expanded="true"><div class="rct-full-block"><div class="project-managemnet-wrapper"><div class="rct-scroll" style="position: relative; overflow: hidden; width: 100%; height: auto; min-height: 100px; max-height: 620px;"><div style="position: relative; overflow: scroll; margin-right: -17px; margin-bottom: -17px; min-height: 117px; max-height: 637px;"><div class="table-responsive"><table class="mb-0 table table-hover"><thead><tr><th><span>Project Name</span></th><th><span>Deadline</span></th><th><span>Status</span></th><th><span>Team</span></th></tr></thead><tbody><tr><td>Back Image</td><td>10 May 2022</td><td><div class="mt-10 w-90 progress"><div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 15%;"></div></div>
+<p class="mb-0 fs-12 text-muted">To Do</p></td><td class="d-flex justify-content-between"><div class="team-avatar w-100"><ul class="mb-0 list-inline"><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Maggie"><img alt="avatar" src="crafthub_cancer-app_files/user-1.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Ivan"><img alt="avatar" src="crafthub_cancer-app_files/user-2.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Lisa"><img alt="avatar" src="crafthub_cancer-app_files/user-3.jpg" class="MuiAvatar-img"></div></li></ul></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button"><span class="MuiIconButton-label"><i class="material-icons">add_circle</i></span><span class="MuiTouchRipple-root"></span></button></td></tr><tr><td>Back Image</td><td>10 Apr 2022</td><td><div class="mt-10 w-90 progress"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div></div><p class="mb-0 fs-12 text-muted">Done</p></td><td class="d-flex justify-content-between"><div class="team-avatar w-100"><ul class="mb-0 list-inline"><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Maggie"><img alt="avatar" src="crafthub_cancer-app_files/user-1.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Ivan"><img alt="avatar" src="crafthub_cancer-app_files/user-2.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Lisa"><img alt="avatar" src="crafthub_cancer-app_files/user-3.jpg" class="MuiAvatar-img"></div></li></ul></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button"><span class="MuiIconButton-label"><i class="material-icons">add_circle</i></span><span class="MuiTouchRipple-root"></span></button></td></tr><tr><td>Back Image</td><td>10 Mar 2022</td><td><div class="mt-10 w-90 progress"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div></div><p class="mb-0 fs-12 text-muted">Done</p></td><td class="d-flex justify-content-between"><div class="team-avatar w-100"><ul class="mb-0 list-inline"><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Maggie"><img alt="avatar" src="crafthub_cancer-app_files/user-1.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Ivan"><img alt="avatar" src="crafthub_cancer-app_files/user-2.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Lisa"><img alt="avatar" src="crafthub_cancer-app_files/user-3.jpg" class="MuiAvatar-img"></div></li></ul></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button"><span class="MuiIconButton-label"><i class="material-icons">add_circle</i></span><span class="MuiTouchRipple-root"></span></button></td></tr><tr><td>Back Image</td><td>10 Feb 2022</td><td><div class="mt-10 w-90 progress"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div></div><p class="mb-0 fs-12 text-muted">Done</p></td><td class="d-flex justify-content-between"><div class="team-avatar w-100"><ul class="mb-0 list-inline"><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Maggie"><img alt="avatar" src="crafthub_cancer-app_files/user-1.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Ivan"><img alt="avatar" src="crafthub_cancer-app_files/user-2.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Lisa"><img alt="avatar" src="crafthub_cancer-app_files/user-3.jpg" class="MuiAvatar-img"></div></li></ul></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button"><span class="MuiIconButton-label"><i class="material-icons">add_circle</i></span><span class="MuiTouchRipple-root"></span></button></td></tr><tr><td>Back Image</td><td>10 Jan 2022</td><td><div class="mt-10 w-90 progress"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div></div><p class="mb-0 fs-12 text-muted">Done</p></td><td class="d-flex justify-content-between"><div class="team-avatar w-100"><ul class="mb-0 list-inline"><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Maggie"><img alt="avatar" src="crafthub_cancer-app_files/user-1.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Ivan"><img alt="avatar" src="crafthub_cancer-app_files/user-2.jpg" class="MuiAvatar-img"></div></li><li class="list-inline-item"><div class="MuiAvatar-root MuiAvatar-circle rounded-circle" title="Lisa"><img alt="avatar" src="crafthub_cancer-app_files/user-3.jpg" class="MuiAvatar-img"></div></li></ul></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button"><span class="MuiIconButton-label"><i class="material-icons">add_circle</i></span><span class="MuiTouchRipple-root"></span></button></td></tr></tbody></table></div></div><div style="position: absolute; height: 6px; transition: opacity 200ms ease 0s; opacity: 0; right: 2px; bottom: 2px; left: 2px; border-radius: 3px;"><div style="position: relative; display: block; height: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); width: 0px;"></div></div><div style="position: absolute; width: 6px; transition: opacity 200ms ease 0s; opacity: 0; right: 2px; bottom: 2px; top: 2px; border-radius: 3px;"><div style="position: relative; display: block; width: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); height: 0px; transform: translateY(0px);"></div></div></div><div class="rct-block-footer "><span class="fs-12 text-base"><i class="mr-15 zmdi zmdi-refresh"></i><span>Updated 10 min ago</span></span></div></div></div></div></div></div></div><div class="row"><div class="col-sm-12 col-md-6 col-lg-6 w-xs-full"><div class="rct-block trafic-bar-chart d-none"><div class="rct-block-title "><h4><span>Overall Traffic Status</span> </h4><div class="contextual-link"><a href="file:///C:/Users/ajris/personal_projects/crafthub_cancer-app.htm#"><i class="ti-minus"></i></a><a href="file:///C:/Users/ajris/personal_projects/crafthub_cancer-app.htm#"><i class="ti-reload"></i></a><a href="file:///C:/Users/ajris/personal_projects/crafthub_cancer-app.htm#"><i class="ti-close"></i></a></div></div><div class="collapse show" aria-expanded="true"><div class="rct-full-block"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><div class="p-40 display-n"><div class="row"><div class="col-xl-4 col-md-4 col-sm-4"><span class="text-muted mb-5 d-block"><span>Online Sources</span></span><div class="d-flex justify-content-between"><h2 class="text-muted mb-0">3500</h2><i class="ti-arrow-up text-info font-lg"></i></div></div><div class="col-xl-4 col-md-4 col-sm-4"><span class="text-muted mb-5 d-block"><span>Today</span></span><div class="d-flex justify-content-between"><h2 class="text-muted mb-0">17,020 </h2><i class="ti-arrow-up text-info font-lg"></i></div></div><div class="col-xl-4 col-md-4 col-sm-4"><span class="text-muted mb-5 d-block"><span>Last Month</span></span><div class="d-flex justify-content-between"><h2 class="text-muted mb-0">20.30% </h2><i class="ti-arrow-down text-pink font-lg"></i></div></div></div></div><canvas style="display: block; height: 196px; width: 393px;" class="chartjs-render-monitor" width="491" height="245"></canvas></div></div></div></div><div class="col-sm-12 col-md-6 col-lg-6 w-xs-full"><div class="row"><div class="col-sm-6 col-md-4 col-lg-4 w-xs-half-block"><div class="rct-block review-slider overflow-hidden bg-primary text-white"><div class="rct-block-title "><h4><span>Personalized Tips - Risk Factors</span> </h4></div><div class="collapse show" aria-expanded="true"><div class="rct-block-content"><div><div class="slick-slider slick-initialized" dir="ltr"><div class="slick-list"><div class="slick-track" style="width: 3222px; opacity: 1; transform: translate3d(-716px, 0px, 0px);"><div data-index="-1" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 358px;"><div><div class="pb-20" tabindex="-1" style="width: 100%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img src="data:image/jpeg;base64,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" alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" width="60" height="60"></div><div><h5 class="mb-0">Kelsey Beck</h5><span class="fs-12">Yesterday</span></div></div><p class="mb-20 text-justify">Watching
+ the news the other day, it occurred to me that people who have “words 
+to live by” often begin to attack and even kill others. I thought back 
+to my own angry youth, when I could easily use words to justify violent 
+thoughts which might have become violent actions.Watching the news the 
+other day, it occurred to me that people who have “words to live by” 
+often begin to attack and even kill others. </p></div></div></div><div data-index="0" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: currentcolor none medium; width: 358px;"><div><div class="pb-20" tabindex="-1" style="width: 100%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" src="crafthub_cancer-app_files/82865d9b-0829-4189-8443-833c7563e3eb.svg" width="60" height="60"></div><div><h5 class="mb-0">John Doe</h5><span class="fs-12">Yesterday</span></div></div><p class="mb-20 text-justify">Tanned skin is a sign of sun damage – there is no such thing as a
+healthy tan.<br><br>Preventive measures include<br>
+- avoiding strong, direct sunlight, particularly in the summer
+months and between 11:00 and 15:00;<br>
+- wearing sunglasses with ultraviolet protection,<br>
+- loose clothing with long sleeves,<br>
+- a wide-brimmed hat; and<br>
+- using sunscreen with a sun protection factor (SPF) of at least
+15 and reapplying it regularly as activities require, at least
+every 2 hours.</p></div></div></div><div data-index="1" class="slick-slide slick-active slick-current" tabindex="-1" aria-hidden="false" style="outline: currentcolor none medium; width: 358px;"><div class="pb-20" tabindex="-1" style="width: 89%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" src="crafthub_cancer-app_files/82865d9b-0829-4189-8443-833c7563e3eb.svg" style="border-radius: 0px !important;" width="60" height="60"></div><div><h5 class="mb-0">John Doe</h5><span class="fs-12">Yesterday</span></div></div><p class="mb-20 text-justify">Tanned skin is a sign of sun damage – there is no such thing as a
+healthy tan.<br><br>Preventive measures include<br>
+- avoiding strong, direct sunlight, particularly in the summer
+months and between 11:00 and 15:00;<br>
+- wearing sunglasses with ultraviolet protection,<br>
+- loose clothing with long sleeves,<br>
+- a wide-brimmed hat; and<br>
+- using sunscreen with a sun protection factor (SPF) of at least
+15 and reapplying it regularly as activities require, at least
+every 2 hours.</p></div></div><div data-index="2" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: currentcolor none medium; width: 358px;"><div><div class="pb-20" tabindex="-1" style="width: 100%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" src="crafthub_cancer-app_files/82865d9b-0829-4189-8443-833c7563e3eb.svg" width="60" height="60"></div><div><h5 class="mb-0">John Doe</h5><span class="fs-12">Yesterday</span></div></div><p class="mb-20 text-justify">Tanned skin is a sign of sun damage – there is no such thing as a
+healthy tan.<br><br>Preventive measures include<br>
+- avoiding strong, direct sunlight, particularly in the summer
+months and between 11:00 and 15:00;<br>
+- wearing sunglasses with ultraviolet protection,<br>
+- loose clothing with long sleeves,<br>
+- a wide-brimmed hat; and<br>
+- using sunscreen with a sun protection factor (SPF) of at least
+15 and reapplying it regularly as activities require, at least
+every 2 hours.</p></div></div></div><div data-index="3" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: currentcolor none medium; width: 358px;"><div><div class="pb-20" tabindex="-1" style="width: 100%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" src="crafthub_cancer-app_files/82865d9b-0829-4189-8443-833c7563e3eb.svg" width="60" height="60"></div><div><h5 class="mb-0">John Doe</h5><span class="fs-12">Yesterday</span></div></div><p class="mb-20 text-justify">Tanned skin is a sign of sun damage – there is no such thing as a
+healthy tan.<br><br>Preventive measures include<br>
+- avoiding strong, direct sunlight, particularly in the summer
+months and between 11:00 and 15:00;<br>
+- wearing sunglasses with ultraviolet protection,<br>
+- loose clothing with long sleeves,<br>
+- a wide-brimmed hat; and<br>
+- using sunscreen with a sun protection factor (SPF) of at least
+15 and reapplying it regularly as activities require, at least
+every 2 hours.</p></div></div></div><div data-index="4" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 358px;"><div><div class="pb-20" tabindex="-1" style="width: 100%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" src="crafthub_cancer-app_files/82865d9b-0829-4189-8443-833c7563e3eb.svg" width="60" height="60"></div><div><h5 class="mb-0">John Doe</h5><span class="fs-12">Yesterday</span></div></div><p class="mb-20 text-justify">Tanned skin is a sign of sun damage – there is no such thing as a
+healthy tan.<br><br>Preventive measures include<br>
+- avoiding strong, direct sunlight, particularly in the summer
+months and between 11:00 and 15:00;<br>
+- wearing sunglasses with ultraviolet protection,<br>
+- loose clothing with long sleeves,<br>
+- a wide-brimmed hat; and<br>
+- using sunscreen with a sun protection factor (SPF) of at least
+15 and reapplying it regularly as activities require, at least
+every 2 hours.</p></div></div></div><div data-index="5" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 358px;"><div><div class="pb-20" tabindex="-1" style="width: 100%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img src="data:image/jpeg;base64,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" alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" width="60" height="60"></div><div><h5 class="mb-0">Shelby Caldwell</h5><span class="fs-12">10 min ago</span></div></div><p class="mb-20 text-justify">Watching
+ the news the other day, it occurred to me that people who have “words 
+to live by” often begin to attack and even kill others. I thought back 
+to my own angry youth, when I could easily use words to justify violent 
+thoughts which might have become violent actions.Watching the news the 
+other day, it occurred to me that people who have “words to live by” 
+often begin to attack and even kill others. </p></div></div></div><div data-index="6" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 358px;"><div><div class="pb-20" tabindex="-1" style="width: 100%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img src="data:image/jpeg;base64,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" alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" width="60" height="60"></div><div><h5 class="mb-0">Beau Salinas</h5><span class="fs-12">Yesterday</span></div></div><p class="mb-20 text-justify">Watching
+ the news the other day, it occurred to me that people who have “words 
+to live by” often begin to attack and even kill others. I thought back 
+to my own angry youth, when I could easily use words to justify violent 
+thoughts which might have become violent actions. Watching the news the 
+other day, it occurred to me that people who have “words to live by” 
+often begin to attack and even kill others.</p></div></div></div><div data-index="7" tabindex="-1" class="slick-slide slick-cloned" aria-hidden="true" style="width: 358px;"><div><div class="pb-20" tabindex="-1" style="width: 100%; display: inline-block;"><div class="d-flex mb-25 align-items-center"><div class="user-img mr-25"><img src="data:image/jpeg;base64,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" alt="reviewer profile" class="d-inline-block img-fluid rounded-circle" width="60" height="60"></div><div><h5 class="mb-0">Kelsey Beck</h5><span class="fs-12">Yesterday</span></div></div><p class="mb-20 text-justify">Watching
+ the news the other day, it occurred to me that people who have “words 
+to live by” often begin to attack and even kill others. I thought back 
+to my own angry youth, when I could easily use words to justify violent 
+thoughts which might have become violent actions.Watching the news the 
+other day, it occurred to me that people who have “words to live by” 
+often begin to attack and even kill others. </p></div></div></div></div></div><ul style="display: block;" class="slick-dots"><li class="slick-active"><button>2</button></li></ul></div></div></div></div></div></div></div></div></div><div class="row"><div class="col-sm-6 col-md-4 col-lg-4 w-xs-full"><div class="rct-block "><div class="collapse show" aria-expanded="true"><div class="rct-full-block"><div class="weather-top rct-weather-widget overflow-hidden rounded-top" style="background-image: url(https://wallpaperaccess.com/full/1298387.jpg);"><div class="black-overlay weather-over py-20"><div class="weather-head mb-20 d-flex justify-content-between"><div class="align-items-start"><h4>Budapest</h4><span>Sat, 11:13 AM</span></div><i></i></div><div class="weather-temp"><h2>8.93<sup>°C</sup></h2></div></div></div><div class="weather-bottom"><ul class="list-inline mb-0"><li class="d-flex justify-content-between align-items-center"><span class="w-50">Budapest, Sun 08 May</span><div class="w-icon"><i></i></div><span class="d-block">13.44<sup>°C</sup></span><span class="d-block">Rain - Good to go</span></li><li class="d-flex justify-content-between align-items-center"><span class="w-50" style="width: 45% !important;">Budapest, Mon 09 May</span><span class="d-block">17.07<sup>°C</sup></span><span class="d-block">Clouds - Good to go</span></li><li class="d-flex justify-content-between align-items-center"><span class="w-50">Budapest, Tue 10 May</span><div class="w-icon"><i></i></div><span class="d-block">19.06<sup>°C</sup></span><span class="d-block">Clear - Take Care</span></li><li class="d-flex justify-content-between align-items-center"><span class="w-50">Budapest, Wed 11 May</span><div class="w-icon"><i></i></div><span class="d-block">20.31<sup>°C</sup></span><span class="d-block">Clear - Take Care</span></li></ul></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div> <script type="text/javascript" src="crafthub_cancer-app_files/main.txt"></script> <span id="recharts_measurement_span" style="position: absolute; top: -20000px; left: 0px; padding: 0px; margin: 0px; border: medium none; white-space: pre;">16:00</span></body></html>
